@@ -1,0 +1,30 @@
+ 
+<form [formGroup]="employeeForm" id="employeeForm">
+<div>
+    <span class="error-color" *ngIf="error">{{"IN-CORRECT_DATA,_PLEASE_ENTER_VALID_DATA_!" | translate }}</span>
+</div>
+      <div class="row">
+        <!-- Grid column -->
+        <div class="col-lg-12">
+          <!-- Material input -->
+          <nz-form-item>
+            <nz-form-control>
+              <nz-select style="width:100%;" nzShowSearch nzAllowClear id="EMPLOYEE_ID" formControlName="EMPLOYEE_ID" [nzPlaceHolder]="'NAME'|translate"
+                [(ngModel)]="selectedValue" (ngModelChange)="onChange($event)" >
+                <nz-option *ngFor="let emp of employees" [nzLabel]="emp.NAME" [nzValue]="emp"> </nz-option>
+              </nz-select>
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+      </div>
+      <div >
+          <button nz-button [nzType]="'primary'" (click)="onYesClick()" >{{"SAVE" | translate }}</button>
+        </div>
+    </form>
+
+ 
+  
+ 
+
+
+

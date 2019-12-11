@@ -1,0 +1,37 @@
+<div class="col-lg-6 p-0">
+  <nz-form-item>
+    <nz-form-label nzFor="search-input">{{"SEARCH" | translate }}<span class="red-color">*</span></nz-form-label>
+    <nz-form-control>
+      <input nz-input class="form-control" name="search-input" type="text" [(ngModel)]="searchText" (change)="searchItems()" id="search-input" placeholder="Event Name ">
+    </nz-form-control>
+  </nz-form-item>
+</div>
+<nz-table #itemsDataTable [nzData]="resultsModelService.displayData" class=" utils__scrollTable" nzShowSizeChanger nzShowTotal [nzLoading]="isDataLoading">
+  <thead #filterTable (nzSortChange)="sortData($event)">
+    <tr>
+      <th nzShowSort nzSortKey="EXECUTION_ID" scope="col">{{"EXECTUION_ID" | translate }}</th>
+      <th nzShowSort nzSortKey="EXECUTION_TYPE" scope="col">{{"EXECUTION_TYPE" | translate }}</th>
+      <th nzShowSort nzSortKey="EXECUTION_IDENTIFIER_EN" scope="col">{{"IDENTIFIER_EN" | translate }}</th>
+      <th nzShowSort nzSortKey="RESULT_MESSAGE" scope="col">{{"RESULT_MESSAGE" | translate }}</th>
+      <th nzShowSort nzSortKey="CREATED_DATE" scope="col">{{"CREATED_DATE" | translate }}</th>
+      <th nzShowSort nzSortKey="CREATED_BY" scope="col">{{"CREATED_BY" | translate }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-template ngFor let-def [ngForOf]="itemsDataTable.data">
+      <tr>
+        <td>{{def.EXECUTION_ID}}</td>
+        <td>
+          <h6><strong>{{def.EXECUTION_TYPE}}</strong></h6>
+        </td>
+        <td>{{"EXECUTION_IDENTIFIER_EN" | translate }}</td>
+        <td>{{def.RESULT_MESSAGE}}</td>
+        <td>
+          <nz-tag [nzColor]="'#f50'">{{def.CREATED_DATE | date}}</nz-tag>
+        </td>
+
+        <td>{{def.CREATED_BY}}</td>
+      </tr>
+    </ng-template>
+  </tbody>
+</nz-table>

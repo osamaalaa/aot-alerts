@@ -1,0 +1,46 @@
+<nz-card nzType="inner" [nzTitle]="'Alerts_Dashboard'|translate">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+          <div style="display: block">
+              <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
+                [legend]="barChartLegend" [chartType]="barChartType" (chartHover)="chartHoveredl($event)"
+                (chartClick)="chartClickedl($event)"></canvas>
+            </div>
+            <button mat-button mat-raised-button color="primary" style="display: none;" (click)="randomize()">Update</button>
+          </div>
+       <!--  <div style="display: block">
+          <canvas baseChart
+            [datasets]="radarChartData"
+            [options]="radarChartOptions"
+            [labels]="radarChartLabels"
+            chartType="radar">
+          </canvas>
+        </div> 
+      </div>-->
+    <div class="col-lg-6">
+      
+      <div class="chart">
+        <canvas baseChart
+          [data]="pieChartData"
+          [labels]="pieChartLabels"
+          chartType="pie"
+          [options]="pieChartOptions"
+          [plugins]="pieChartPlugins"
+          [colors]="pieChartColors"
+          [legend]="pieChartLegend">
+        </canvas>
+      </div>
+         
+      </div>
+    </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+   
+</nz-card>
+ 
+
+ 

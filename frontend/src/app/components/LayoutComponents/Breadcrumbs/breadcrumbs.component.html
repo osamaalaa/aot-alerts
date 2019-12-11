@@ -1,0 +1,19 @@
+<div class="breadcrumbs">
+  <div class="path">
+    <nz-breadcrumb>
+      <nz-breadcrumb-item>
+        <a href routerLink="/dashboard/" class="text-muted"><i nz-icon nzType="home"></i></a>
+      </nz-breadcrumb-item>
+      <ng-container *ngFor="let item of breadcrumbs; let last = last;">
+        <nz-breadcrumb-item *ngIf="!last">
+          <!-- <span class="arrow text-muted"></span> -->
+          <span class="text-muted">{{ item.title }}</span>
+        </nz-breadcrumb-item>
+        <nz-breadcrumb-item *ngIf="last">
+          <!-- <span class="arrow"></span> -->
+          <strong>{{ item.title }}</strong>
+        </nz-breadcrumb-item>
+      </ng-container>
+    </nz-breadcrumb>
+  </div>
+</div>

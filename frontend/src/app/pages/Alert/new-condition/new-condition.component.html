@@ -1,0 +1,131 @@
+ 
+<form [formGroup]="conditionsForm" id="conditionsForm">
+  <div>
+    <span class="error-color" *ngIf="error">{{"IN-CORRECT_DATA,_PLEASE_ENTER_VALID_DATA_!" | translate }}</span>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-6">
+      <nz-form-item>
+        <nz-form-label nzFor="ACTION_NAME">{{"CONDITION_NAME" | translate }}<span class="red-color">*</span></nz-form-label>
+        <nz-form-control>
+          <input nz-input name="ACTION_NAME" type="text" id="ACTION_NAME" [placeholder]="'CONDITION_NAME'| translate"
+            formControlName="ACTION_NAME">
+          <div>
+            <nz-form-explain class="red-color"
+              *ngIf=" ACTION_NAME.invalid &&(ACTION_NAME.dirty || ACTION_NAME.touched)">
+              {{"CONDITION_NAME_IS_REQUIRED_"|translate}}
+            </nz-form-explain>
+          </div>
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+    <div class="col-lg-6">
+      <nz-form-item>
+        <nz-form-label nzFor="AND_OR">{{"SEPERATOR" | translate }}<span class="red-color">*</span></nz-form-label>
+        <nz-select style="width: 100%; display: block;" [(ngModel)]="selectedValue" nzAllowClear [nzPlaceHolder]="'SEPERATOR'|translate"
+          id="AND_OR" formControlName="AND_OR">
+          <nz-option [nzValue]="'AND'|translate" [nzLabel]="'AND'|translate"></nz-option>
+          <nz-option [nzValue]="'OR'|translate" [nzLabel]="'OR'|translate"></nz-option>
+        </nz-select>
+      </nz-form-item>
+    </div>
+   
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <nz-form-item>
+        <nz-form-label nzFor="ACTION_DESC">{{"CONDITION_DESCRIPTION" | translate }}<span class="red-color">*</span></nz-form-label>
+        <nz-form-control>
+          <input nz-input name="ACTION_DESC" type="text" id="ACTION_DESC" [placeholder]="'CONDITION_DESCRIPTION'|translate"
+            formControlName="ACTION_DESC">
+          <div>
+            <nz-form-explain class="red-color"
+              *ngIf=" ACTION_DESC.invalid &&(ACTION_DESC.dirty || ACTION_DESC.touched)">
+              {{"CONDITION_DESCRIPTION_IS_REQUIRED_"|translate}}
+            </nz-form-explain>
+          </div>
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-6" style="display: none;" >
+      <nz-form-item>
+        <nz-form-label nzFor="ACTION_TYPE">{{"TYPE" | translate }}<span class="red-color">*</span></nz-form-label>
+        <nz-select style="width: 100%; display: block;" [nzPlaceHolder]="'TYPE'|translate" id="ACTION_TYPE"
+          formControlName="ACTION_TYPE">
+          <nz-option nzValue="miscellaneous" nzLabel="miscellaneous"></nz-option>
+        </nz-select>
+        <nz-form-explain class="red-color" *ngIf="ACTION_TYPE.invalid &&(ACTION_TYPE.dirty || ACTION_TYPE.touched)">
+          {{"COLUMN_NAME_IS_REQUIRED_"|translate}}
+        </nz-form-explain>
+      </nz-form-item>
+    </div>
+    <div class="col-lg-6">
+      <nz-form-item>
+        <nz-form-control>
+          <!-- //(ngModelChange)="onChange()" -->
+          <nz-form-label nzFor="TABLE_NAME">{{"TABLE_NAME" | translate }}<span class="red-color">*</span></nz-form-label>
+          <nz-select style="width:100%;" nzShowSearch nzAllowClear [nzPlaceHolder]="'TABLE_NAME'|translate"
+            (ngModelChange)="fillcoulmn($event)" id="TABLE_NAME" formControlName="TABLE_NAME">
+            <nz-option *ngFor="let o of tablenames" [nzLabel]="o.FULLNAME" [nzValue]="o.FULLNAME"></nz-option>
+          </nz-select>
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+  </div>
+  <div class="row">
+    <!-- Grid column -->
+    <div class="col-lg-6">
+      <nz-form-item>
+        <nz-form-label nzFor="COLUMN_NAME">{{"COLUMN_NAME" | translate }}<span class="red-color">*</span></nz-form-label>
+        <nz-select style="width: 100%; display: block;" [nzPlaceHolder]="'COLUMN_NAME'|translate" id="COLUMN_NAME"
+          formControlName="COLUMN_NAME">
+          <nz-option *ngFor="let t of tablecolumns" [nzValue]="t.value" [nzLabel]="t.label"></nz-option>
+        </nz-select>
+        <nz-form-explain class="red-color" *ngIf="COLUMN_NAME.invalid &&(COLUMN_NAME.dirty || COLUMN_NAME.touched)">
+          {{"COLUMN_NAME_IS_REQUIRED_"|translate}}
+        </nz-form-explain>
+      </nz-form-item>
+    </div>
+    <div class="col-lg-3">
+      <nz-form-item>
+        <nz-form-label nzFor="CONDITION_OPERATOR">{{"OPERATOR" | translate }}<span class="red-color">*</span></nz-form-label>
+        <nz-select style="width: 100%; display: block;" [nzPlaceHolder]=" 'OPERATOR'|translate" id="CONDITION_OPERATOR"
+          formControlName="CONDITION_OPERATOR">
+          <nz-option *ngFor="let ope of operatorsTypes" [nzValue]="ope.value" [nzLabel]="ope.label"></nz-option>
+        </nz-select>
+        <nz-form-explain class="red-color"
+          *ngIf="CONDITION_OPERATOR.invalid &&(CONDITION_OPERATOR.dirty || CONDITION_OPERATOR.touched)">
+          {{"OPERATOR_IS_REQUIRED_"|translate}}
+        </nz-form-explain>
+      </nz-form-item>
+      <!-- Material input -->
+
+    </div>
+
+    <div class="col-lg-3">
+      <nz-form-item>
+        <nz-form-label nzFor="CONDITION_VALUE">{{"VALUE" | translate }}<span class="red-color">*</span></nz-form-label>
+        <nz-form-control>
+          <input nz-input name="CONDITION_VALUE" type="text" id="CONDITION_VALUE" [placeholder]="'VALUE'|translate"
+            formControlName="CONDITION_VALUE">
+          <div>
+            <nz-form-explain class="red-color"
+              *ngIf=" CONDITION_VALUE.invalid &&(CONDITION_VALUE.dirty || CONDITION_VALUE.touched)">
+              {{"CORRECT_VALUE_IS_REQUIRED" | translate}}
+            </nz-form-explain>
+          </div>
+        </nz-form-control>
+      </nz-form-item>
+      <!-- Material input -->
+    </div>
+  </div>
+  <div>
+    <button nz-button [nzType]="'primary'" (click)="onYesClick()">{{"SAVE" | translate }}</button>
+  </div>
+</form>
+
+ 

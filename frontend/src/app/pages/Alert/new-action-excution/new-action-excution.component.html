@@ -1,0 +1,114 @@
+<form [formGroup]="executionForm" id="executionForm" nz-form nzLayout="'vertical'">
+  <div>
+    <span class="error-color" *ngIf="error">{{"IN-CORRECT_DATA,_PLEASE_ENTER_VALID_DATA_!" | translate }}</span>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-6">
+      <nz-form-item>
+        <nz-form-label nzFor="EXECUTION_IDENTIFIER_EN">{{"IDENTIFIER_-_EN" | translate }}<span class="red-color">*</span></nz-form-label>
+        <nz-form-control>
+          <input nz-input name="EXECUTION_IDENTIFIER_EN" type="text" id="EXECUTION_IDENTIFIER_EN"
+            [placeholder]="'IDENTIFIER_-_EN'|translate" formControlName="EXECUTION_IDENTIFIER_EN">
+          <div>
+            <nz-form-explain class="red-color" *ngIf="EXECUTION_IDENTIFIER_EN.invalid &&
+                (EXECUTION_IDENTIFIER_EN.dirty || EXECUTION_IDENTIFIER_EN.touched)">
+              {{"IDENTIFIER_EN_required"|translate}}
+            </nz-form-explain>
+          </div>
+        </nz-form-control>
+      </nz-form-item>
+      <!-- Material input -->
+    </div>
+    <div class="col-lg-6">
+      <nz-form-item>
+        <nz-form-label nzFor="EXECUTION_IDENTIFIER_AR">{{"IDENTIFIER_-_AR" | translate }}<span class="red-color">*</span></nz-form-label>
+        <nz-form-control>
+          <input nz-input name="EXECUTION_IDENTIFIER_AR" type="text" id="EXECUTION_IDENTIFIER_AR"
+            [placeholder]="'IDENTIFIER_-_AR'|translate" formControlName="EXECUTION_IDENTIFIER_AR">
+          <div>
+            <nz-form-explain class="red-color" *ngIf="EXECUTION_IDENTIFIER_AR.invalid &&
+                  (EXECUTION_IDENTIFIER_AR.dirty || EXECUTION_IDENTIFIER_AR.touched)">
+                  {{"IDENTIFIER_AR_required"|translate}}
+            </nz-form-explain>
+          </div>
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-6">
+      <nz-form-item>
+        <nz-form-label nzFor="EXECUTION_TYPE">{{"EXECUTION_TYPE" | translate }}<span class="red-color">*</span></nz-form-label>
+        <nz-select style="width: 100%; display: block;"
+          (ngModelChange)="changeExecutionType($event)" [nzPlaceHolder]="'EXECUTION_TYPE'|translate" id="EXECUTION_TYPE"
+          formControlName="EXECUTION_TYPE">
+          
+          <nz-option nzValue="DB" nzLabel="Database"></nz-option>
+          <nz-option nzValue="WS" nzLabel="Webservice"></nz-option>
+          <nz-option nzValue="EMAIL" nzLabel="EMAIL"></nz-option>
+          <nz-option nzValue="SMS" nzLabel="SMS"></nz-option>
+        </nz-select>
+        <nz-form-explain class="red-color" *ngIf="EXECUTION_TYPE.invalid &&(EXECUTION_TYPE.dirty || EXECUTION_TYPE.touched)">
+          {{"EXECUTION_TYPE_required"|translate}}
+        </nz-form-explain>
+      </nz-form-item>
+    </div>
+    <div class="col-lg-6" style="display: none;">
+      <nz-form-item>
+        <nz-form-label nzFor="CREATED_BY">{{"CREATED_BY" | translate }}<span class="red-color">*</span></nz-form-label>
+        <nz-form-control>
+          <input nz-input name="CREATED_BY" type="text" id="CREATED_BY" placeholder="Created By"
+            formControlName="CREATED_BY">
+          <div>
+            <nz-form-explain class="red-color" *ngIf="CREATED_BY.invalid && (CREATED_BY.dirty || CREATED_BY.touched)">
+              Created By is required
+            </nz-form-explain>
+          </div>
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+    <div class="col-lg-6" >
+      <nz-form-item>
+        <nz-form-label nzFor="SUPJECT">{{"SUPJECT" | translate }}<span class="red-color">*</span></nz-form-label>
+        <nz-form-control>
+          <input nz-input name="SUPJECT" type="text" id="SUPJECT" [placeholder]="'SUPJECT'| translate"
+            formControlName="SUPJECT">
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+    <ejs-richtexteditor id='iframeRTE' [(value)]='value' [toolbarSettings]='tools' style="height:200px; display: block;"></ejs-richtexteditor>
+  </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <nz-form-item>
+        <nz-form-label nzFor="POST_MESSAGE">{{"POST_MESSAGE" | translate }}<span class="red-color">*</span></nz-form-label>
+        <nz-form-control>
+          <input nz-input name="POST_MESSAGE" type="text" id="POST_MESSAGE"
+            [placeholder]="'POST_MESSAGE'|translate" formControlName="POST_MESSAGE">
+          <div>
+            <nz-form-explain class="red-color"
+              *ngIf="POST_MESSAGE.invalid && (POST_MESSAGE.dirty || POST_MESSAGE.touched)">
+              Post Message is required
+            </nz-form-explain>
+          </div>
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+  </div>
+  
+  <div>
+      <button nz-button [nzType]="'primary'" (click)="onYesClick()" >{{"SAVE" | translate }}</button>
+  </div>
+  
+</form>
+  
+   
+    
+
+  
+  

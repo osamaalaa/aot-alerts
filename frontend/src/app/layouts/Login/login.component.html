@@ -1,0 +1,23 @@
+<nz-layout>
+  <nz-content>
+    <div [ngClass]="{'login': true, 'light': backgroundEnabled}">
+      <header class="header">
+        <a href="javascript: void(0);" class="logo">
+          <img class="logo-header" *ngIf="!backgroundEnabled" src="assets/images/logo-header.png" alt="AOT Alerts">
+          <img class="logo-header" *ngIf="backgroundEnabled" src="assets/images/logo-header.png" alt="AOT Alerts">
+        </a>
+        <!--div class="styleControls">
+          <button nz-button nzType="default" class="mr-3" (click)="changeBackground()">Change Background</button>
+          <button nz-button nzType="default" (click)="toggleBackground()">Toggle Background</button>
+        </div-->
+        <span class="ml-md-auto">منصه انجاز</span>
+      </header>
+      <div class="content">
+        <router-outlet (activate)="onActivate($event)"></router-outlet>
+      </div>
+      <div class="footer text-center">
+        <p>&copy; 2019 AOT. All rights reserved.</p>
+      </div>
+    </div>
+  </nz-content>
+</nz-layout>

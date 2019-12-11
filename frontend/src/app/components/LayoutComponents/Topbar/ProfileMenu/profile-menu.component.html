@@ -1,0 +1,60 @@
+<nz-dropdown [nzTrigger]="'click'" [nzPlacement]="'bottomRight'" (nzVisibleChange)="badgeCountIncrease()">
+  <a nz-dropdown class="dropdown">
+
+    <!-- <nz-badge [nzCount]="badgeCount"> -->
+    <!--nz-spin [nzSpinning]="spinning">
+      <div *ngIf="!spinning">
+        <nz-avatar nzIcon="user" [nzSize]="'large'" class="avatar" [nzSrc]="img_url"></nz-avatar>
+      </div>
+      
+      </nz-spin-->
+    <!-- </nz-badge> -->
+    <div><strong>{{userName}}</strong></div>
+
+  </a>
+  <ul nz-menu class="profile-list">
+    <!--li nz-menu-item>
+      <strong>Hello, {{userName}}</strong>
+      <div>
+        <strong class="mr-1">
+          Employee ID:
+        </strong> {{employee}}
+      </div>
+      <div>
+        <strong>
+          Role:
+        </strong> {{position}}
+      </div>
+    </li>
+    <li nz-menu-divider></li>
+    <li nz-menu-item>
+      <div>
+        <strong>
+          Email:
+        </strong> {{email}}
+        <br />
+        <strong>
+          Phone:
+        </strong> {{phone}}
+      </div>
+    </li>
+    <li nz-menu-divider></li-->
+    <li nz-menu-item>
+      <a routerLink="/basic/profile">
+        <i class="menuIcon icmn-user"></i> User Profile
+      </a>
+    </li>
+    <li nz-menu-divider></li>
+    <li nz-menu-item>
+      <a routerLink="/dashboard/beta">
+        <i class="menuIcon icmn-home"></i> Home
+      </a>
+    </li>
+    <li nz-menu-divider></li>
+    <li nz-menu-item>
+      <a href="javascript: void(0);" (click)="logout()">
+        <i class="menuIcon icmn-exit"></i> Logout
+      </a>
+    </li>
+  </ul>
+</nz-dropdown>

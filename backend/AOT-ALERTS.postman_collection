@@ -1,0 +1,861 @@
+{
+	"info": {
+		"_postman_id": "3b0f90f5-17c3-4fe6-985e-c79f0d22c01d",
+		"name": "AOT-ALERTS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "security",
+			"item": [
+				{
+					"name": "LoginAuth",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"USER_NAME\": \"osama\",\n\t\"USER_PASSWORD\": \"123\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9003/security/LoginAuth",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9003",
+							"path": [
+								"security",
+								"LoginAuth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "resetPassword",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"USER_NAME\": \"osama\",\n\t\"USER_PASSWORD\": \"123\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9003/security/resetPassword",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9003",
+							"path": [
+								"security",
+								"resetPassword"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "USerRole",
+			"item": [
+				{
+					"name": "getUserPic",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9003/userRole/getUserPic/62/png",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9003",
+							"path": [
+								"userRole",
+								"getUserPic",
+								"62",
+								"png"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "providetoken",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"USERNAME\" : \"aot\",\n\t\"PASSWORD\" : \"p@ssw0rd\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9003/providetoken/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9003",
+					"path": [
+						"providetoken",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllEventDefs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9003/alertSys/getAllEventDefs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9003",
+					"path": [
+						"alertSys",
+						"getAllEventDefs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getEventActions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9003/alertSys/getEventActions/1211",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9003",
+					"path": [
+						"alertSys",
+						"getEventActions",
+						"1211"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getEventConditions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9003/alertSys/getEventConditions/1211",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9003",
+					"path": [
+						"alertSys",
+						"getEventConditions",
+						"1211"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getEventSchedule",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9003/alertSys/getEventSchedule/1211",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9003",
+					"path": [
+						"alertSys",
+						"getEventSchedule",
+						"1211"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getScheduleType",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9003/alertSys/getScheduleType/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9003",
+					"path": [
+						"alertSys",
+						"getScheduleType",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getEventAudit",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9003/alertSys/getEventAudit/1211",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9003",
+					"path": [
+						"alertSys",
+						"getEventAudit",
+						"1211"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getPKColumn",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9003/alertSys/getPKColumn/test",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9003",
+					"path": [
+						"alertSys",
+						"getPKColumn",
+						"test"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getActionEmployee",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9003/alertSys/getActionEmployee/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9003",
+					"path": [
+						"alertSys",
+						"getActionEmployee",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getActionExecutions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9003/alertSys/getActionExecutions/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9003",
+					"path": [
+						"alertSys",
+						"getActionExecutions",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllTables",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9003/alertSys/getAllTables",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9003",
+					"path": [
+						"alertSys",
+						"getAllTables"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllScheduleTypes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9003/alertSys/getAllScheduleTypes/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9003",
+					"path": [
+						"alertSys",
+						"getAllScheduleTypes",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getexectuionstat",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9003/alertSys/getexectuionstat",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9003",
+					"path": [
+						"alertSys",
+						"getexectuionstat"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getsuccessfailurestat",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9003/alertSys/getsuccessfailurestat",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9003",
+					"path": [
+						"alertSys",
+						"getsuccessfailurestat"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getscheduletypestat",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9003/alertSys/getscheduletypestat",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9003",
+					"path": [
+						"alertSys",
+						"getscheduletypestat"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllEventAudit",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9003/alertSys/getAllEventAudit",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9003",
+					"path": [
+						"alertSys",
+						"getAllEventAudit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllActionResults",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9003/alertSys/getAllActionResults",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9003",
+					"path": [
+						"alertSys",
+						"getAllActionResults"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllScheduleLog",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9003/alertSys/getAllScheduleLog",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9003",
+					"path": [
+						"alertSys",
+						"getAllScheduleLog"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "geteventSchema",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9003/alertSys/geteventSchema",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9003",
+					"path": [
+						"alertSys",
+						"geteventSchema"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "insertEventDef",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"EVENT_NAME\":\"TEST\",\n\t\"EVENT_DESC\":\"TEST\",\n\t\"ENABLED\":\"Y\",\n\t\"CREATED_BY\":\"SA\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9003/alertSys/insertEventDef",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9003",
+					"path": [
+						"alertSys",
+						"insertEventDef"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "insertEventAction",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"EVENT_ID\" : 2,\n        \"ACTION_NAME\" : \"SECOND ACTION FOR EVENT 2\",\n        \"ACTION_DESC\" : \"SECOND ACTION FOR EVENT 2\",\n        \"ACTION_TYPE\" : \"MESSAGE\",\n        \"CREATED_BY\" : \"WA\",\n        \"ENABLED\" : \"Y\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9003/alertSys/insertEventAction",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9003",
+					"path": [
+						"alertSys",
+						"insertEventAction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "insertActionSchedule",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"ACTION_ID\" : 1,\n        \"TYPE_ID\" : 1,\n        \"SCHEDULE_ACTIVE\" : \"Y\",\n        \"CREATED_BY\" : \"WA\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9003/alertSys/insertActionSchedule",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9003",
+					"path": [
+						"alertSys",
+						"insertActionSchedule"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "insertActionCondition",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"ACTION_ID\" : 1,\n        \"ACTION_NAME\" : \"CONDITION FOR SECOND EVENT ACTION NO 1\",\n        \"ACTION_DESC\" : \"CONDITION FOR SECOND EVENT ACTION NO 1\",\n        \"ACTION_TYPE\" : \"MESSAGE\",\n        \"TABLE_NAME\" : \"TEST\",\n        \"COLUMN_NAME\" : \"TEST\",\n        \"CONDITION_OPERATOR\" : \"=\",\n        \"CONDITION_VALUE\" : \"1222\",\n        \"CREATED_BY\" : \"WA\",\n        \"AND_OR\" : null\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9003/alertSys/insertActionCondition",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9003",
+					"path": [
+						"alertSys",
+						"insertActionCondition"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "insertScheduleType",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t    \"TYPE_ID\" : 6,\n        \"TYPE_NAME\" : \"PERIODIC | YEAR\",\n        \"ENABLED\" : \"Y\",\n        \"EVERY_TYPE\" : \"PERIODIC\",\n        \"EVERY_TIME\" : \"YEAR\",\n        \"CREATED_BY\" : \"WA\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9003/alertSys/insertScheduleType",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9003",
+					"path": [
+						"alertSys",
+						"insertScheduleType"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "insertActionEmployee",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"ACTION_ID\" : 1,\n\t\"EMPLOYEE_ID\" : 1677\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9003/alertSys/insertActionEmployee",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9003",
+					"path": [
+						"alertSys",
+						"insertActionEmployee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "insertActionExecution",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"ACTION_ID\" : 1,\n        \"EXECUTION_TYPE\" : \"MESSAGE\",\n        \"EXECUTION_IDENTIFIER_EN\" : \"TEST\",\n        \"EXECUTION_IDENTIFIER_AR\" : \"TEST\",\n        \"CREATED_BY\" : \"WS\",\n        \"POST_MESSAGE\": \"1234\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9003/alertSys/insertActionExecution",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9003",
+					"path": [
+						"alertSys",
+						"insertActionExecution"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sendSMS",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"TO\" : \"0562884385\",\n\t\"MESSAGE\" : \"welcome from Node Project | Alerts %0a WA\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9003/alertSys/sendSMS",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9003",
+					"path": [
+						"alertSys",
+						"sendSMS"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getTableColumns",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"TABLE_NAME\" : \"hr.test\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9003/alertSys/getTableColumns/hr.test",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9003",
+					"path": [
+						"alertSys",
+						"getTableColumns",
+						"hr.test"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "insertEventSchema",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"SCHEMA_NAME\" : \"HR\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9003/alertSys/insertEventSchema",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9003",
+					"path": [
+						"alertSys",
+						"insertEventSchema"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getSecPriv",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9003/SecPriv/getSecPriv",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9003",
+					"path": [
+						"SecPriv",
+						"getSecPriv"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getSecPrivById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9003/SecPriv/getSecPrivById/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9003",
+					"path": [
+						"SecPriv",
+						"getSecPrivById",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

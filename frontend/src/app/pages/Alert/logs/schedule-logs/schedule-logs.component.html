@@ -1,0 +1,35 @@
+<div class="col-lg-6 p-0">
+  <nz-form-item>
+    <nz-form-label nzFor="search-input">{{"SEARCH" | translate }}<span class="red-color">*</span></nz-form-label>
+    <nz-form-control>
+      <input nz-input class="form-control" name="search-input" type="text" [(ngModel)]="searchText" (change)="searchItems()" id="search-input" placeholder="Event Name ">
+    </nz-form-control>
+  </nz-form-item>
+</div>
+
+<nz-table #itemsDataTable [nzData]="scheduleModelService.displayData" maxWidth="100%" class=" utils__scrollTable" nzShowSizeChanger nzShowTotal [nzLoading]="isDataLoading">
+  <thead #filterTable (nzSortChange)="sortData($event)">
+    <tr>
+      <th nzShowSort nzSortKey="EVENT_ID" scope="col">{{"EVENT_ID" | translate }}</th>
+      <th nzShowSort nzSortKey="EVENT_NAME" scope="col">{{"EVENT_NAME" | translate }}</th>
+      <th nzShowSort nzSortKey="MESSAGE" scope="col">{{"MESSAGE" | translate }}</th>
+      <th nzShowSort nzSortKey="EVENT_TIME" scope="col">{{"EVENT_TIME" | translate }}</th>
+      <th nzShowSort nzSortKey="ACTION_ID | SCHEDULE_ID | CONDITION_ID" scope="col">{{"ACTION_|_SCHEDULE_|_CONDITION" | translate }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-template ngFor let-def [ngForOf]="itemsDataTable.data">
+      <tr>
+        <td>{{def.EVENT_ID}}</td>
+        <td>
+          <h6><strong>{{def.EVENT_NAME}}</strong></h6>
+        </td>
+        <td>{{def.MESSAGE}}</td>
+        <td>
+          <nz-tag [nzColor]="'#f50'">{{def.MESSAGE_DATE | date}}</nz-tag>
+        </td>
+        <td>{{def.ACTION_ID}} | {{def.SCHEDULE_ID}} | {{def.CONDITION_ID}}</td>
+      </tr>
+    </ng-template>
+  </tbody>
+</nz-table>

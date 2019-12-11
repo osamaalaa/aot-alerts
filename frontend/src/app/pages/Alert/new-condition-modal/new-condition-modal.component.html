@@ -1,0 +1,120 @@
+<!-- <div class="modal-content">
+  <div class="modal-header">
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">×</span>
+    </button>
+    <h4 class="modal-title w-100" id="myModalLabel">{{"BUILD_CONDITIONS_.." | translate }}</h4>
+  </div>
+  <div class="modal-body mx-3">
+
+    <form [formGroup]="conditionsForm" id="conditionsForm">
+<div>
+    <span class="error-color" *ngIf="error">{{"IN-CORRECT_DATA,_PLEASE_ENTER_VALID_DATA_!" | translate }}</span>
+</div>
+
+      <div class="form-row">
+=
+
+        <div class="col-md-3">
+       =
+            <div class="md-form form-group">
+
+              <mdb-select [options]="conTypes" placeholder="Seperator" id="AND_OR" formControlName="AND_OR"></mdb-select>
+              <label for="AND_OR">{{"SEPERATOR" | translate }}</label>
+           </div>
+          </div>
+
+        <div class="col-md-9">
+   
+          <div class="md-form form-group">
+            <input mdbInput type="text" class="form-control" id="ACTION_NAME" placeholder="Condition Name" formControlName="ACTION_NAME" />
+            <label for="ACTION_NAME">{{"CONDITION_NAME" | translate }}</label>
+            <mdb-error *ngIf="ACTION_NAME.invalid &&(ACTION_NAME.dirty || ACTION_NAME.touched)">{{"CONDITION_NAME_IS_REQUIRED_!" | translate }}</mdb-error>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-md-12">
+     
+            <div class="md-form form-group">
+              <input mdbInput type="text" class="form-control" id="ACTION_DESC" placeholder="Condition Description" formControlName="ACTION_DESC" />
+              <label for="ACTION_DESC">{{"CONDITION_DESCRIPTION" | translate }}</label>
+              <mdb-error *ngIf="ACTION_DESC.invalid &&(ACTION_DESC.dirty || ACTION_DESC.touched)">{{"CONDITION_DESCRIPTION_IS_REQUIRED_!" | translate }}</mdb-error>
+            </div>
+          </div>
+        </div>
+
+      <div class="form-row">
+     
+          <div class="col-md-6">
+        
+            <div class="md-form form-group">
+
+              <mdb-select [options]="conditionsTypes" placeholder="Choose Type" id="ACTION_TYPE" formControlName="ACTION_TYPE"></mdb-select>
+              <label for="ACTION_TYPE">{{"TYPE" | translate }}</label>
+              <mdb-error *ngIf="ACTION_TYPE.invalid &&(ACTION_TYPE.dirty || ACTION_TYPE.touched)">{{"CONDITION_TYPE_IS_REQUIRED_!" | translate }}</mdb-error>
+           </div>
+          </div>
+
+          <div class="col-md-6">
+
+              <div class="md-form form-group">
+                  <input type="text" class="completer-input form-control mdb-autocomplete"
+                  (input)="getFilteredData()" (ngModelChange)="onChange()"
+                 
+                  placeholder="Table Name"
+                  formControlName="TABLE_NAME"
+                  id="TABLE_NAME">
+           <mdb-auto-completer #auto="mdbAutoCompleter" textNoResults="Please enter correct value">
+             <mdb-option *ngFor="let option of results | async" [value]="option">
+               {{option.FULLNAME}}
+             </mdb-option>
+           </mdb-auto-completer>
+                  <mdb-error *ngIf="TABLE_NAME.invalid &&(TABLE_NAME.dirty || TABLE_NAME.touched)">{{"TABLE_NAME_IS_REQUIRED_!" | translate }}</mdb-error>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="form-row">
+        
+            <div class="col-md-6">
+            
+              <div class="md-form form-group">
+                <mdb-select [options]="tablecolumns" placeholder="Column" id="COLUMN_NAME" formControlName="COLUMN_NAME" (ngModelChange)="selectedVal($event)"></mdb-select>
+                <label for="COLUMN_NAME">{{"COLUMN_NAME" | translate }}</label>
+                <mdb-error *ngIf="COLUMN_NAME.invalid &&(COLUMN_NAME.dirty || COLUMN_NAME.touched)">{{"COLUMN_NAME_IS_REQUIRED_!" | translate }}</mdb-error>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              
+                <div class="md-form form-group">
+                  <mdb-select [options]="operatorsTypes" placeholder="Operator" id="CONDITION_OPERATOR" formControlName="CONDITION_OPERATOR"></mdb-select>
+                  <label for="CONDITION_OPERATOR">{{"OPERATOR" | translate }}</label>
+                  <mdb-error *ngIf="CONDITION_OPERATOR.invalid &&(CONDITION_OPERATOR.dirty || CONDITION_OPERATOR.touched)">{{"OPERATOR_IS_REQUIRED_!" | translate }}</mdb-error>
+                </div>
+              </div>
+
+              <div class="col-md-3">
+           
+                  <div class="md-form form-group">
+                    <input mdbInput [type]="myType" class="form-control" id="CONDITION_VALUE" placeholder="Value" formControlName="CONDITION_VALUE" />
+                    <label for="CONDITION_VALUE">{{"VALUE" | translate }}</label>
+                    <mdb-error *ngIf="CONDITION_VALUE.invalid &&(CONDITION_VALUE.dirty || CONDITION_VALUE.touched)">{{"CORRECT_VALUE_IS_REQUIRED" | translate }}</mdb-error>
+                  </div>
+                </div>
+          </div>
+
+    </form>
+
+  </div>
+  <div class="modal-footer">
+    <button type="button" mdbBtn size="sm" color="secondary" class="waves-light" aria-label="Close" (click)="onNoClick()"
+      mdbWavesEffect>{{"CLOSE" | translate }}</button>
+    <button type="button" mdbBtn size="sm" color="primary" class="relative waves-light" (click)="onYesClick()" mdbWavesEffect>{{"SAVE" | translate }}</button>
+
+
+  </div>
+</div>
+ -->

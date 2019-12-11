@@ -1,0 +1,10 @@
+delete from schedule_log;
+delete from event_audit;
+delete from action_result;
+delete from action_execution;
+delete from action_employee;
+delete from action_schedule;
+delete from action_conditions;
+delete from event_actions;
+delete from event_def;
+commit;

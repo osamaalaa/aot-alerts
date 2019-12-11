@@ -1,0 +1,14 @@
+.error-color {
+    color: brown
+  }
+  .readonly-wrapper {
+
+    cursor: not-allowed;
+    
+    }
+    
+    .readonly-wrapper .readonly-block {
+    
+    pointer-events: none;
+    
+    }

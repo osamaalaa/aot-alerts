@@ -1,0 +1,63 @@
+<!-- Main navigation -->
+
+
+<nz-card nzType="inner" [nzTitle]="'ALERTS_TRACKING'|translate">
+  <nz-tabset nzSize="large" [nzType]="'card'">
+    <nz-tab [nzTitle]="'AUDIT_LOGS'|translate">
+      <div class="row">
+        <div class="col-lg-6">
+
+          <nz-form-item>
+            <nz-form-label nzFor="search-input">{{"SEARCH" | translate }}<span class="red-color">*</span></nz-form-label>
+            <nz-form-control>
+              <input nz-input name="search-input" type="text" [(ngModel)]="searchText" (change)="searchItems()" id="search-input" placeholder="Event Name">
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+      </div>
+      <nz-table #itemsDataTable [nzData]="logsModelService.displayData" maxWidth="100%" class=" utils__scrollTable" nzShowSizeChanger nzShowTotal [nzLoading]="isDataLoading">
+        <thead #filterTable (nzSortChange)="sortData($event)">
+          <tr>
+            <th nzShowSort nzSortKey="EVENT_ID" scope="col">{{"EVENT_ID" | translate }}</th>
+            <th nzShowSort nzSortKey="EVENT_NAME" scope="col">{{"EVENT_NAME" | translate }}</th>
+            <th nzShowSort nzSortKey="Message" scope="col">{{"MESSAGE" | translate }}</th>
+            <th nzShowSort nzSortKey="EVENT_TIME" scope="col">{{"EVENT_TIME" | translate }}</th>
+            <th nzShowSort nzSortKey="ACTION_ID | SCHEDULE_ID | CONDITION_ID" scope="col">{{"ACTION_|_SCHEDULE_|_CONDITION" | translate }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-template ngFor let-def [ngForOf]="itemsDataTable.data">
+            <tr>
+              <td>{{def.EVENT_ID}}</td>
+              <td>
+                <h6><strong>{{def.EVENT_NAME}}</strong></h6>
+              </td>
+              <td>{{def.MESSAGE}}</td>
+              <td>
+                <nz-tag [nzColor]="'#f50'">{{def.EVENT_TIME | date}}</nz-tag>
+              </td>
+              <td>{{def.ACTION_ID}} | {{def.SCHEDULE_ID}} | {{def.CONDITION_ID}}</td>
+            </tr>
+          </ng-template>
+        </tbody>
+      </nz-table>
+    </nz-tab>
+    <!--Panel 2-->
+    <nz-tab [nzTitle]="'ACTION_RESULTS'|translate">
+      <div class="row">
+        <div class="col-12">
+          <app-results></app-results>
+        </div>
+      </div>
+    </nz-tab>
+    <!--Panel 3-->
+    <nz-tab [nzTitle]="'SCHEDULE_LOGS'|translate">
+      <div class="row">
+        <div class="col-12">
+          <app-schedule-logs></app-schedule-logs>
+        </div>
+      </div>
+    </nz-tab>
+  </nz-tabset>
+
+</nz-card>
